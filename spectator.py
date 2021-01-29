@@ -52,13 +52,12 @@ def mainForm():
             for k, v in tweet.items():
                 if k == 'full_text':
                     textbox1 = tk.Text(window, width=52, height=6, state='disabled')
-                    textbox1.config(font=('Calibri', 15))
+                    textbox1.config(font=('Calibri', 14))
                     textbox1.place(relx=0.3, rely=posistions[i-1])
                     textbox1.config(state='normal')
                     textbox1.delete('1.0', "end")
                     textbox1.insert('1.0', v)
                     textbox1.config(state='disabled')
-                    print(v)
 
 
 def start():
