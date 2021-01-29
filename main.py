@@ -1,7 +1,4 @@
-import psycopg2
 import tkinter as tk
-
-from datetime import datetime
 import moderation
 import user
 import spectator

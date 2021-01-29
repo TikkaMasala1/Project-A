@@ -1,7 +1,5 @@
-import psycopg2
 import tkinter as tk
 import json
-from datetime import datetime
 from twython import Twython
 from auth import (
     consumer_key,
