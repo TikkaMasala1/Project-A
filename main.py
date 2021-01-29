@@ -33,7 +33,7 @@ def mainForm():
     # window, text to display, x pos, y pos, function to button
     ButtonMaker(window, 'Moderatie', 240, 300, moderation.start)
     ButtonMaker(window, 'Gebruiker', 540, 300, user.start)
-    # ButtonMaker(window, 'Station', 840, 300, spectator.start)
+    ButtonMaker(window, 'Station', 840, 300, spectator.start)
 
 
 if __name__ == '__main__':

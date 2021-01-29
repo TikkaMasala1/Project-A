@@ -58,11 +58,17 @@ def actionLabel(action):
         successLabel.config(font=('Calibri', 20))
         successLabel.after(2000, lambda: successLabel.destroy())
 
-    elif action == 'warning':
-        warningLabel = tk.Label(window, text="Bericht is verplicht!", bg='#FCC63F')
-        warningLabel.place(x=540, y=625)
-        warningLabel.config(font=('Calibri', 20))
-        warningLabel.after(2000, lambda: warningLabel.destroy())
+    elif action == 'missing':
+        missingLabel = tk.Label(window, text="Bericht is verplicht!", bg='#FCC63F')
+        missingLabel.place(x=540, y=625)
+        missingLabel.config(font=('Calibri', 20))
+        missingLabel.after(2000, lambda: missingLabel.destroy())
+
+    elif action == 'limit':
+        limitLabel = tk.Label(window, text="Bericht is te lang", bg='#FCC63F')
+        limitLabel.place(x=540, y=625)
+        limitLabel.config(font=('Calibri', 20))
+        limitLabel.after(2000, lambda: limitLabel.destroy())
 
 
 def messageMake(name, bericht):
@@ -82,7 +88,14 @@ def messageMake(name, bericht):
         con.commit()
         cur.close()
         con.close()
-        actionLabel('warning')
+        actionLabel('missing')
+        return
+
+    if len(bericht) > 250:
+        con.commit()
+        cur.close()
+        con.close()
+        actionLabel('limit')
         return
 
     else:
